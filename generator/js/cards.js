@@ -208,13 +208,14 @@ function card_element_dndstats(params, card_data, options) {
     var mods = [0,0,0,0,0,0];
     for (var i = 0; i < 6; ++i) {
         stats[i] = parseInt(params[i], 10) || 0;
-        var mod = Math.floor(((stats[i] - 10) / 2));
+        var dice = (stats[i] % 3);
+        var mod = Math.floor((stats[i] / 3));
         if (mod >= 0) {
             mod = "+" + mod;
         } else {
-            mod = "" + mod;
+            mod = "";
         }
-        mods[i] = "&nbsp;(" + mod + ")";
+        mods[i] = dice + "D" + mod;
     }
 
     var result = "";
@@ -228,12 +229,12 @@ function card_element_dndstats(params, card_data, options) {
     result += '      <th class="card-stats-header">CHA</th>';
     result += '    </tr>';
     result += '    <tr>';
-    result += '      <td class="card-stats-cell">' + stats[0] + mods[0] + '</td>';
-    result += '      <td class="card-stats-cell">' + stats[1] + mods[1] + '</td>';
-    result += '      <td class="card-stats-cell">' + stats[2] + mods[2] + '</td>';
-    result += '      <td class="card-stats-cell">' + stats[3] + mods[3] + '</td>';
-    result += '      <td class="card-stats-cell">' + stats[4] + mods[4] + '</td>';
-    result += '      <td class="card-stats-cell">' + stats[5] + mods[5] + '</td>';
+    result += '      <td class="card-stats-cell">' + mods[0] + '</td>';
+    result += '      <td class="card-stats-cell">' + mods[1] + '</td>';
+    result += '      <td class="card-stats-cell">' + mods[2] + '</td>';
+    result += '      <td class="card-stats-cell">' + mods[3] + '</td>';
+    result += '      <td class="card-stats-cell">' + mods[4] + '</td>';
+    result += '      <td class="card-stats-cell">' + mods[5] + '</td>';
     result += '    </tr>';
     result += '  </tbody>';
     result += '</table>';
