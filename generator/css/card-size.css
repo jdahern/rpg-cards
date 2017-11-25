@@ -89,6 +89,22 @@ page[size="25x35"] {
     height: 2in;
 }
 
+
+/* Landscape big card */
+.card-size-50x75 {
+    width:5.0in;
+    height:7.5in;
+}
+.card-size-50x75 .card-back-icon {
+    width: 2in;
+    height: 2in;
+}
+
+.page[size="Letter"] .card-size-full2x1 {
+    width:71mm;
+    height:92mm;
+}
+
 /* Card sizes that fill out the entire sheet of paper (minimal margins) */
 .page[size="A4"] .card-size-full3x3 {
     width:69mm;

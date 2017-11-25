@@ -8,9 +8,9 @@ function card_default_options() {
         default_color: "black",
         default_icon: "ace",
         default_title_size: "13",
-        page_size: "A4",
-        page_rows: 3,
-        page_columns: 3,
+        page_size: "US Letter",
+        page_rows: 2,
+        page_columns: 2,
         card_arrangement: "doublesided",
         card_size: "25x35",
         card_count: null,
@@ -145,6 +145,13 @@ function card_element_boxes(params, card_data, options) {
 
     var result = "";
     result += '<div class="card-element card-description-line">';
+    
+
+	if (params[2])
+	{
+		result += '<h4 class="card-property-name" style="padding-right:2px" >' + params[2] + '</h4>';
+	}
+
     for (var i = 0; i < count; ++i) {
         result += '<svg class="card-box" height="100" width="100" viewbox="0 0 100 100" preserveaspectratio="none" xmlns="http://www.w3.org/2000/svg" ' + style + '>';
         result += '    <rect x="5" y="5" width="90" height="90" ' + fill + stroke + ' style="stroke-width:10">';
@@ -208,9 +215,9 @@ function card_element_dndstats(params, card_data, options) {
     var mods = [0,0,0,0,0,0];
     for (var i = 0; i < 6; ++i) {
         stats[i] = parseInt(params[i], 10) || 0;
-        var dice = (stats[i] % 3);
-        var mod = Math.floor((stats[i] / 3));
-        if (mod >= 0) {
+        var dice = Math.floor((stats[i] / 3));
+        var mod = Math.floor((stats[i] % 3));
+        if (mod > 0) {
             mod = "+" + mod;
         } else {
             mod = "";
