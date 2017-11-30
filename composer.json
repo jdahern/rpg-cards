@@ -1,0 +1,23 @@
+{
+    "name": "jahern/rpg-cards",
+    "description": "Store and generate RPG Cards in open D6",
+    "type": "project",
+    "require": {
+        "php": "^5.5",
+        "php-di/php-di": "^5.4",
+        "nikic/fast-route": "^1.2",
+        "twig/twig": "^1.35",
+        "mnapoli/silly": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "OpenDungeon\\": "src/OpenDungeon/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jeff",
+            "email": "jeffery.ahern+gh@gmail.com"
+        }
+    ]
+}
