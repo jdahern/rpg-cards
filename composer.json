@@ -7,7 +7,11 @@
         "php-di/php-di": "^5.4",
         "nikic/fast-route": "^1.2",
         "twig/twig": "^1.35",
-        "mnapoli/silly": "^1.5"
+        "mnapoli/silly": "^1.5",
+        "phpunit/phpunit": "^4.8"
+    },
+    "config": {
+        "bin-dir": "bin"
     },
     "autoload": {
         "psr-4": {
