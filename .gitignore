@@ -3,3 +3,9 @@
 /.tmp
 /.sass-cache
 /bower_components
+/generator/js/*.map
+/generator/js/*.d.ts
+/temp
+/temp.zip
+
+/vendor/
