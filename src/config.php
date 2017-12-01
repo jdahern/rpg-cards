@@ -1,5 +1,6 @@
 <?php
-use function DI\object;
+
+use DI\object;
 use OpenDungeon\Model\ArticleRepository;
 use OpenDungeon\Persistence\InMemoryArticleRepository;
 return [

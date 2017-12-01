@@ -1,7 +1,9 @@
 <?php
-namespace SuperBlog\Controller;
-use SuperBlog\Model\ArticleRepository;
+namespace OpenDungeon\Controller;
+
+use OpenDungeon\Model\ArticleRepository;
 use Twig_Environment;
+
 class HomeController
 {
     /**
@@ -12,7 +14,7 @@ class HomeController
      * @var Twig_Environment
      */
     private $twig;
-    public function __construct(ArticleRepository $repository, Twig_Environment $twig)
+    public function __construct(ArticleRepository $repository = null, Twig_Environment $twig  = null)
     {
         $this->repository = $repository;
         $this->twig = $twig;

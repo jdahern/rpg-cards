@@ -1,7 +1,9 @@
 <?php
-namespace SuperBlog\Controller;
-use SuperBlog\Model\ArticleRepository;
+namespace OpenDungeon\Controller;
+
+use OpenDungeon\Model\ArticleRepository;
 use Twig_Environment;
+
 class ArticleController
 {
     /**
