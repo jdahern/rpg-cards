@@ -1,7 +1,7 @@
 <?php
-namespace OpenDungeon\Controller;
+namespace OpenDungeon\Controllers;
 
-use OpenDungeon\Model\ArticleRepository;
+use OpenDungeon\Model\Article\Repository as ArticleRepository;
 use Twig_Environment;
 
 class HomeController
@@ -10,21 +10,19 @@ class HomeController
      * @var ArticleRepository
      */
     private $repository;
+    
     /**
      * @var Twig_Environment
      */
     private $twig;
-    public function __construct(ArticleRepository $repository = null, Twig_Environment $twig  = null)
+    
+    public function __construct(ArticleRepository $repository, Twig_Environment $twig)
     {
         $this->repository = $repository;
         $this->twig = $twig;
     }
-    /**
-     * Example of an invokable class, i.e. a class that has an __invoke() method.
-     *
-     * @see http://php.net/manual/en/language.oop5.magic.php#object.invoke
-     */
-    public function __invoke()
+    
+    public function handle()
     {
         echo $this->twig->render('home.twig', [
             'articles' => $this->repository->getArticles(),

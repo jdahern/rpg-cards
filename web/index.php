@@ -1,12 +1,16 @@
 <?php
 $container = require __DIR__ . '/../src/bootstrap.php';
 use FastRoute\RouteCollector;
-use OpenDungeon\Controller\HomeController;
-use OpenDungeon\Controller\ArticleController;
+use OpenDungeon\AttributeDice\AttributeDice;
+use OpenDungeon\Controllers\HomeController;
+use OpenDungeon\Controllers\ArticleController;
 
-new HomeController();
+$dice = new AttributeDice(5);
+print $dice;
+print_r(phpinfo());
+
 $dispatcher = FastRoute\simpleDispatcher(function (RouteCollector $r) {
-    $r->addRoute('GET', '/', HomeController::CLASS);
+    $r->addRoute('GET', '/', [HomeController::CLASS, 'handle']);
     $r->addRoute('GET', '/article/{id}', [ArticleController::CLASS, 'show']);
 });
 $route = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);
