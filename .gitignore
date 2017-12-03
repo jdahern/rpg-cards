@@ -7,5 +7,4 @@
 /generator/js/*.d.ts
 /temp
 /temp.zip
-
-/vendor/
+/.idea
